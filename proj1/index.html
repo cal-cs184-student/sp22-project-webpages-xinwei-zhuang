@@ -1,7 +1,365 @@
+<!DOCTYPE html>
 <html>
-	<head>
-	</head>
-	<body>
-		Project 1 here
-	</body>
+<head>
+<title>Page Title</title>
+
+<script src="/js/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+<script type="text/javascript" src="LaTeXMathML.js">
+  <script defer src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+(function () {
+  var script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+  script.async = true;
+  document.head.appendChild(script);
+})();
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "200px";
+  document.getElementById("main").style.marginLeft = "200px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<style>
+
+code {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  color: #336699;
+  padding: 2px;
+  font-size: 80%;
+  line-height: 1.5;
+}
+.MathJax {
+font-size: 1.2em;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+html {
+    margin:    0 auto;
+    max-width: 1200px;
+}
+body {
+  background-color: RGB(250,250,250);
+  color: #303060;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+box-sizing: border-box;
+  width: 100%; 
+  padding: 20px;   
+  margin: auto;
+}
+p.big {
+  line-height: 1.5;
+}
+figure figcaption {
+    text-align: center;
+}
+figure {
+    display: block;
+    margin: 0 1em 1em 0;
+    vertical-align: middle;
+    text-align: center;
+    max-height: 80%;  
+    max-width: 80%; 
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin-left: auto;
+    margin-right: auto ;
+}
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 40%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.main {
+  vertical-align: middle;
+  margin-left: 230px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  position: relative;
+}
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box {
+  float: middle;
+  width: 80%;
+  padding: 20px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 230px;
+  position: fixed;
+  z-index: 1;
+  top: 50;
+  left: 0;
+
+  background-color: RGB(250,250,250);
+  overflow-x: hidden;
+  margin-top: 100px;
+  transition: 0.5s;
+
+}
+
+.sidenav a.first {
+  padding: 6px 8px 6px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #303060;
+  display: block;
+  text-align: right;
+}
+
+.sidenav a.second {
+  padding: 6px 8px 6px 70px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #303060;
+  display: block;
+  text-align: right;
+}
+
+.sidenav a.first:hover {
+  font-size: 25px;
+  font-weight: bold;
+}
+.sidenav a.second:hover {
+  font-size: 17px;
+  font-weight: bold;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.vl {
+  border-left: 5px;
+  height: 400px;
+  width : 1px;
+  position: absolute;
+  left: 218.5px;
+  top:  0 px;
+  background-image: linear-gradient( transparent, #303060, transparent);
+}
+.matrix {
+    position: relative;
+}
+
+.matrix:before, .matrix:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 1px solid #f1f1f1;
+    width: 6px;
+    height: 100%;
+}
+.matrix:before {
+    left: -6px;
+    border-right: 0px;
+}
+.matrix:after {
+    right: -6px;
+    border-left: 0px;
+}
+.matrix: td {
+    padding: 5px;    
+    text-align: center;
+}
+}
+</style>
+
+</head>
+<body>
+<div id="mySidebar" class="sidenav">
+  <div class="vl"></div>
+  <br><br><br>
+  <atopic><a class= 'second' href="#1" >Part 1 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#2" >Part 2 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#3" >Part 3 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#4" >Part 4 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#5" >Part 5 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#6" >Part 6 <span>&#8729;</span></a></atopic>
+
+</div>
+
+<div class="main">
+<br><br><br><br>
+<h1>Project 1: Rasterizer</h1>
+
+<p style="font-size:15px;">CS 284a Computer graphics & Imaging </p> 2022 Spring Kaleab Belete, Xinwei Zhuang</p>
+
+<hr>
+
+<h2 id="1">Part 1</h2>
+When a design is request, architects usually make some preliminary sketch to visualise their ideas. This sketch is usually abstract, and hard to interpret. However, those sketch are useful and sometimes can give a hint to the final design style. 
+
+This study uses pix2pix as the frame, generate an application that with a simple sketch input, it can generate a more developed design with rendering. 
+<br>
+<br>
+
+
+<h2 id="5">Part 5 "Pixel sampling" for texture mapping</h2>
+<h3> Pixel sampling</h3>
+<b>Explain pixel sampling in your own words and describe how you implemented it to perform texture mapping. Briefly discuss the two different pixel sampling methods, nearest and bilinear.</b><br><br>
+
+Pixel sampling is to find the pixel colour from the texel space to draw on a pixel space. It can be divided into 1:1 mapping (the ideal case), upsampling and downsampling. For magnification and minification, we implement interpolation functions to fill up the pixel space. <br><br>
+
+<b>Nearest sampling</b> <br>
+We first find the nearest mipmap level, then the nearest texel center is sampled to get the pixel color. Using mipmapping can improve texture memory but this cannot avoid box-like artifacts in texture magnification. <br><br>
+<b>Bilinear sampling</b><br>
+ We implement linear interpolation function (lerp) three times to find the interpolated colour of a pixel. The pixel colour depends on the four nearest texels to the pixel. This provides a more smooth interpolation compared to nearest interpolation but still can behave some artifacts. <br><br>
+
+<h3> Results</h3>
+<b>Check out the svg files in the svg/texmap/ directory. Use the pixel inspector to find a good example of where bilinear sampling clearly defeats nearest sampling. Show and compare four png screenshots using nearest sampling at 1 sample per pixel, nearest sampling at 16 samples per pixel, bilinear sampling at 1 sample per pixel, and bilinear sampling at 16 samples per pixel.</b>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/part5_nearest_1.png" style="width:300px">
+    <figcaption>nearest sampling, 1 sample per pixel</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/part5_nearest_16.png" style="width:300px">
+    <figcaption>nearest sampling, 16 sample per pixel</figcaption>
+</figure>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/part5_bilinear_1.png" style="width:300px">
+    <figcaption>bilinear sampling, 1 sample per pixel</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/part5_bilinear_16.png" style="width:300px">
+    <figcaption>bilinear sampling, 16 sample per pixel</figcaption>
+</figure>
+  </div>
+</div>
+
+<h3> Difference</h3>
+<b>Comment on the relative differences. Discuss when there will be a large difference between the two methods and why.</b><p>
+
+For the svg sampled at one sample per pixel rate, both nearest sampling and bilinear sampling behaves a box-like artifacts, but the bilinear sampling is smoother. For the 16 samples per pixel, both sampling stretegies is smoother compared to the 1 sample per pixel case, and there is hardly visual artifacts for the textured image. However, a closer look at the pixel inspector, we can still see that the bilinear sampling behaves better. <p>
+
+The region in texture with uniform colour is not affected much from the sampling mechanism, the region with high frequencies is mostly affected by the sampling size and function. 
+
+
+<h2 id="6">Part 6 "Level sampling" with mipmaps for texture mapping</h2>
+<h3> Level sampling</h3>
+<b>Explain level sampling in your own words and describe how you implemented it for texture mapping.</b><p>
+For a complex scene, we may need different resolution of texture with a higher resolution in the objects near us, and a low resolution for faraway objects. If we apply uniform texture sampling, it will either cause blur (for near objects) or aliasing (for farther objects) or both. <p>
+Using level sampling, with a reduced level of detail for farther objects with a lower sample rate, can avoid the forementioned problem. To achieve this, for each barycentric coordinates, we compute the level of detail (D) the pixel required.
+
+<h3> Tradeoffs</h3>
+<b>You can now adjust your sampling technique by selecting pixel sampling, level sampling, or the number of samples per pixel. Describe the tradeoffs between speed, memory usage, and antialiasing power between the three various techniques.</b><p>
+
+For total of 6 combinations of the texture filtering algorithm, the quickest combination is nearest + level 0, which renders a huge aliasing. Bilinear interpolation + linear interpolation for mipmap level sampling renders the best image. It takes much longer to compute because we need to find the derivatives three times for one pixel to get the level of mipmap. The nearest level of mipmap can cause blur but also a smooth in texture mapping. Bilinear sample also remove the box artifacts compared with nearest sample. <p>
+Speed: L_0>L_nearest, P_nearest>P_linear. <p>
+Memory use: L_nearest>L_0 because need to store mipmap.<p>
+Antialiasing power: L_nearest>L_0, P_linear>P_nearest. <p>
+
+<h3> Results</h3>
+<b>Using a png file you find yourself, show us four versions of the image, using the combinations of L_ZERO and P_NEAREST, L_ZERO and P_LINEAR, L_NEAREST and P_NEAREST, as well as L_NEAREST and P_LINEAR.</b><p>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/L_zero_P_nearest.png" style="width:300px">
+    <figcaption>L_0, P_nearest</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/L_zero_P_bilinear.png" style="width:300px">
+    <figcaption>L_0, P_linear</figcaption>
+</figure>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/L_near_P_near.png" style="width:300px">
+    <figcaption>L_nearest, P_nearest</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/L_near_P_bilinear.png" style="width:300px">
+    <figcaption>L_nearest, P_linear</figcaption>
+</figure>
+  </div>
+</div>
+
+
+<h3> Extra credit</h3>
+<b>Extra credit: If you implemented any extra filtering methods, describe them and show comparisons between your results with the other above methods.</b><p>
+NA.
+
+
+
+<h2 id="ref">Reference</h2>
+
+[1] Delanoy, J., Aubry, M., Isola, P., Efros, A. A., Bousseau, A. (2018). 3D
+Sketching using Multi-View Deep Volumetric Prediction. Proceedings of
+the ACM on Computer Graphics and Interactive Techniques, 1(1), 1–22.
+https://doi.org/10.1145/3203197 <br><br>
+[2] Isola, P., Zhu, J.-Y., Zhou, T., Efros, A. A. (2018). Image-to-Image
+Translation with Conditional Adversarial Networks. ArXiv:1611.07004
+[Cs]. http://arxiv.org/abs/1611.07004 <br><br>
+
+
+</ul>
+
+</div>
+
+</body>
 </html>
