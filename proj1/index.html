@@ -232,15 +232,122 @@ figure {
 <h1>Project 1: Rasterizer</h1>
 
 <p style="font-size:15px;">CS 284a Computer graphics & Imaging </p> 2022 Spring Kaleab Belete, Xinwei Zhuang</p>
+Webpage: <a href="https://cal-cs184-student.github.io/sp22-project-webpages-xinwei-zhuang/proj1/index.html"> https://cal-cs184-student.github.io/sp22-project-webpages-xinwei-zhuang/proj1/index.html</a>
 
 <hr>
 
-<h2 id="1">Part 1</h2>
-When a design is request, architects usually make some preliminary sketch to visualise their ideas. This sketch is usually abstract, and hard to interpret. However, those sketch are useful and sometimes can give a hint to the final design style. 
+<h2 id="1">Part 1: Drawing Single-Color Triangles</h2>
+<b>Walk through how you rasterize triangles in your own words.</b><br><br>
 
-This study uses pix2pix as the frame, generate an application that with a simple sketch input, it can generate a more developed design with rendering. 
-<br>
-<br>
+The basic steps for this part are:<br><br>
+1) Get truncated lower and upper bounds for looping through the image first using min or max functions on the set of xs and ys then using 0 for the lower bound, and hight/width for the upper bound.<br><br>
+2) make a line test lambda function to check if a point (p0,p1) falls withn a given triangle<br><br>
+3) loop through bounds and fill in points with the appropriate color in the appropriate position if they pass the line test<br><br>
+
+<b>Explain how your algorithm is no worse than one that checks each sample within the bounding box of the triangle.</b><br><br>
+We only visit each point once and use truncated bounds so it is better than checking every point.<br><br>
+
+<b>Show a png screenshot of basic/test4.svg with the default viewing parameters and with the pixel inspector centered on an interesting part of the scene.</b><br><br>
+See below.<br><br>
+
+<b>Extra credit</b> <br><br>
+As explained above we use truncated bounds and with the truncated bounds we are able to get a time of: <br><br>
+With                                          |Without<br><br>
+It took 913 clicks or (0.000913 seconds).     |It took 12991 clicks or (0.012991 seconds).<br><br>
+It took 492 clicks or (0.000492 seconds).     |It took 12986 clicks or (0.012986 seconds).<br><br>
+It took 331 clicks or (0.000331 seconds).     |It took 12318 clicks or (0.012318 seconds).<br><br>
+It took 802 clicks or (0.000802 seconds).     |It took 12372 clicks or (0.012372 seconds).<br><br>
+It took 87 clicks or (0.000087 seconds).      |It took 12238 clicks or (0.012238 seconds).<br><br>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/part1_test4_1.png" style="width:300px">
+    <figcaption>Test 4, 1 sample per pixel</figcaption>
+</figure>
+  </div>
+</div>
+<br><br>
+<h2 id="2">Part 2: Antialiasing by Supersampling </h2>
+<b>Walk through your supersampling algorithm and data structures. Why is supersampling useful? What modifications did you make to the rasterization pipeline in the process? Explain how you used supersampling to antialias your triangles.</b><br><br>
+
+Given a sample rate x the basic steps for this part are:<br><br>
+1) We have a sample buffer which is a list of colors that we will resize beased on the the image size and sample rate <br><br>
+2) the rasterization of triangles is done in like in part 1 with an added set of inner nested loops to handel assigning the colors to the resized frame buffer <br><br>
+3) the color sampling is managed in the resolve to framebuffer method with a new innerloop that traverses in the range (1,sqrt(x)*(sqrt(x)) accumulating color values <br><br>
+
+Supersampling is useful in things like antialising because it can take context (near by pixals) into account when rendering an image which helps with continuity and reduces the jaggies that zoomed in pictures have. <br><br>
+Supersampling acts as a low pass filter antialising pictures and removing jaggies/sharp eges that are a result of a high frequancy input.  <br><br>
+
+<b>Show png screenshots of basic/test4.svg with the default viewing parameters and sample rates 1, 4, and 16 to compare them side-by-side. Position the pixel inspector over an area that showcases the effect dramatically; for example, a very skinny triangle corner. Explain why these results are observed.</b><br><br>
+
+The edges of the triangle account for the fact that they are next while empty space and slowly smoothen out as we increase the samle rate becoming lighter in tone and melting into the picture to remove the harsh effect posed by the jaggies in the lower sample rates.<br><br>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/part2_sample_1.png" style="width:300px">
+    <figcaption>Test 4, 1 sample per pixel</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/part2_sample_4.png" style="width:300px">
+    <figcaption>Test 4, 4 sample per pixel</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/part2_sample_16.png" style="width:300px">
+    <figcaption>Test 4, 16 sample per pixel</figcaption>
+</figure>
+</div>
+</div>
+<br><br>
+<h2 id="3">Part 3: Transforms</h2>
+
+<b>Create an updated version of svg/transforms/robot.svg with cubeman doing something more interesting, like waving or running. Feel free to change his colors or proportions to suit your creativity. Save your svg file as my_robot.svg in your docs/ directory and show a png screenshot of your rendered drawing in your write-up. Explain what you were trying to do with cubeman in words.</b><br><br>
+
+The robot is waving and holding its hip, this was done with simple rotations and repositioning of the arms. See pictures below.<br><br>
+
+<b>Extra credit</b> <br><br>
+Pressing '.' will rotate the view in the GUI. See rotated robot below. <br><br>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/part3.png" style="width:300px">
+    <figcaption>waving robot</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/part3_e.png" style="width:300px">
+    <figcaption>rotated waving robot</figcaption>
+</figure>
+  </div>
+</div>
+
+<h2 id="4">Part 4: Barycentric coordinates</h2>
+<h3> Pixel sampling</h3>
+<b>Explain barycentric coordinates in your own words and use an image to aid you in your explanation. One idea is to use a svg file that plots a single triangle with one red, one green, and one blue vertex, which should produce a smoothly blended color triangle.</b><br><br>
+Using barycentric coordinates means that values are determined by their relative distance of a point to each of the given vertices, as you can see in the image below we can break a triangle based on the position of a given point.<br><br>
+<h3> Show a png screenshot of svg/basic/test7.svg with default viewing parameters and sample rate 1. If you make any additional images with color gradients, include them.</h3>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/part4.png" style="width:300px">
+    <figcaption>Test 7, 1 sample per pixel</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/part4_e.png" style="width:600px">
+    <figcaption>Example</figcaption>
+</figure>
+  </div>
+</div>
 
 
 <h2 id="5">Part 5 "Pixel sampling" for texture mapping</h2>
@@ -345,16 +452,6 @@ Antialiasing power: L_nearest>L_0, P_linear>P_nearest. <p>
 NA.
 
 
-
-<h2 id="ref">Reference</h2>
-
-[1] Delanoy, J., Aubry, M., Isola, P., Efros, A. A., Bousseau, A. (2018). 3D
-Sketching using Multi-View Deep Volumetric Prediction. Proceedings of
-the ACM on Computer Graphics and Interactive Techniques, 1(1), 1–22.
-https://doi.org/10.1145/3203197 <br><br>
-[2] Isola, P., Zhu, J.-Y., Zhou, T., Efros, A. A. (2018). Image-to-Image
-Translation with Conditional Adversarial Networks. ArXiv:1611.07004
-[Cs]. http://arxiv.org/abs/1611.07004 <br><br>
 
 
 </ul>
