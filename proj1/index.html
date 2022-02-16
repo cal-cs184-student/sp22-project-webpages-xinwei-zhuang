@@ -94,7 +94,7 @@ figure {
 }
 .column {
   float: left;
-  width: 40%;
+  width: 33%;
   padding: 5px;
 }
 
@@ -210,7 +210,12 @@ figure {
     padding: 5px;    
     text-align: center;
 }
+
+
+
 }
+
+
 </style>
 
 </head>
@@ -248,17 +253,6 @@ The basic steps for this part are:<br><br>
 We only visit each point once and use truncated bounds so it is better than checking every point.<br><br>
 
 <b>Show a png screenshot of basic/test4.svg with the default viewing parameters and with the pixel inspector centered on an interesting part of the scene.</b><br><br>
-See below.<br><br>
-
-<b>Extra credit</b> <br><br>
-As explained above we use truncated bounds and with the truncated bounds we are able to get a time of: <br><br>
-With                                          |Without<br><br>
-It took 913 clicks or (0.000913 seconds).     |It took 12991 clicks or (0.012991 seconds).<br><br>
-It took 492 clicks or (0.000492 seconds).     |It took 12986 clicks or (0.012986 seconds).<br><br>
-It took 331 clicks or (0.000331 seconds).     |It took 12318 clicks or (0.012318 seconds).<br><br>
-It took 802 clicks or (0.000802 seconds).     |It took 12372 clicks or (0.012372 seconds).<br><br>
-It took 87 clicks or (0.000087 seconds).      |It took 12238 clicks or (0.012238 seconds).<br><br>
-
 <div class="row">
   <div class="column">
     <figure>
@@ -267,6 +261,38 @@ It took 87 clicks or (0.000087 seconds).      |It took 12238 clicks or (0.012238
 </figure>
   </div>
 </div>
+
+<b>Extra credit</b> <br><br>
+As explained above we use truncated bounds and with the truncated bounds we are able to get a time of: <br><br>
+<table>
+  <tr>
+    <th>With</th>
+    <th>Without</th>
+  </tr>
+  <tr>
+    <td>It took 913 clicks or (0.000913 seconds). </td>
+    <td>It took 12991 clicks or (0.012991 seconds).</td>
+  </tr>
+  <tr>
+    <td>It took 492 clicks or (0.000492 seconds).</td>
+    <td>It took 12986 clicks or (0.012986 seconds).</td>
+  </tr>
+  <tr>
+    <td>It took 331 clicks or (0.000331 seconds).</td>
+    <td>It took 12318 clicks or (0.012318 seconds).</td>
+  </tr>
+  <tr>
+    <td>It took 802 clicks or (0.000802 seconds).</td>
+    <td>It took 12372 clicks or (0.012372 seconds).</td>
+  </tr>
+  <tr>
+    <td>It took 87 clicks or (0.000087 seconds). </td>
+    <td>It took 12238 clicks or (0.012238 seconds).</td>
+  </tr>
+</table>
+
+
+
 <br><br>
 <h2 id="2">Part 2: Antialiasing by Supersampling </h2>
 <b>Walk through your supersampling algorithm and data structures. Why is supersampling useful? What modifications did you make to the rasterization pipeline in the process? Explain how you used supersampling to antialias your triangles.</b><br><br>
@@ -286,19 +312,19 @@ The edges of the triangle account for the fact that they are next while empty sp
 <div class="row">
   <div class="column">
     <figure>
-  <p><img src="image/part2_sample_1.png" style="width:300px">
+  <p><img src="image/part2_sample_1.png" style="width:280px">
     <figcaption>Test 4, 1 sample per pixel</figcaption>
 </figure>
   </div>
   <div class="column">
     <figure>
-  <p><img src="image/part2_sample_4.png" style="width:300px">
+  <p><img src="image/part2_sample_4.png" style="width:280px">
     <figcaption>Test 4, 4 sample per pixel</figcaption>
 </figure>
   </div>
   <div class="column">
     <figure>
-  <p><img src="image/part2_sample_16.png" style="width:300px">
+  <p><img src="image/part2_sample_16.png" style="width:280px">
     <figcaption>Test 4, 16 sample per pixel</figcaption>
 </figure>
 </div>
