@@ -243,10 +243,12 @@ Webpage: <a href="https://cal-cs184-student.github.io/sp22-project-webpages-xinw
 
 <h2 id="1">Part 1: Bezier curves with 1D de Casteljau subdivision</h2>
 <b>Briefly explain de Casteljau's algorithm and how you implemented it in order to evaluate Bezier curves.</b><br><br>
-
+De Casteljau's algorithm: Finds a given point on a bezier curve with parameter t between 0 and 1 and a set of  n control points {p_1,...,p_n} by recursively performing linear interpolation between the points set, 
+finding intermediate points, and focusing in on the location on the line characterized by t. 
+To compute the n-1 intermediate control points{p_1',...,p_n-1'} we can define the recursive step as pi = (1-t)p_i+tp_i+1.<br><br>
 The basic steps for this part are:<br><br>
 1) If only one point is sent in for evaluation return the given point.<br><br>
-2) Otherwise use push_back and LERP the given list of points using the "(1-t)p_i+tp _i+1" equation and return a new list of larped points.<br><br>
+2) Otherwise use push_back and LERP the given list of points using the "(1-t)p_i+tp_i+1" equation and return a new list of larped points.<br><br>
 
 <b>Take a look at the provided .bzc files and create your own Bezier curve with 6 control points of your choosing. Use this Bezier curve for your screenshots below.</b><br><br>
 
@@ -316,12 +318,18 @@ see bzc/curve3.bzc <br><br>
 <h2 id="2">Part 2: Bezier surfaces with separable 1D de Casteljau</h2>
 <b>Briefly explain how de Casteljau algorithm extends to Bezier surfaces and how you implemented it in order to evaluate Bezier surfaces.</b><br><br>
 
+Given a 3D set of bezier curves each having n control points and parameterized by u we can define a single point pi, 
+in a similar fashion to part 1, by recursively computing liner interpolation, this time breaking down the 3D set first computing along the u parameter to create a new 2D set of points 
+then along the v parameter on the newly computed set to produce a final point.<br><br>
+
+The functions are implemented as follows:<br><br>
+
 1) The evaluate function loops through the 3D list of control points and make a 2D list of new points by calling evaluate 1D on each sublist in controlPoints using u for our t value. 
 Then with the new list of points, call evaluate 1D one last time with v as our t to get the final output on the bezier surface patch over (u, t).<br><br>
 2) In the evaluate1D function if only one point is sent in for evaluation return the given solo point 
 otherwise recursively call the function reducing the points each step using the evaluate step function to get the final intermediated output.<br><br>
 3) In the evaluateStep function if only one point is sent in for evaluation return the given point
-otherwise use push_back and LERP the given list of points using the "(1-t)p_i+tp _i+1" equation and return a new list of larped points.<br><br>
+otherwise use push_back and LERP the given list of points using the "(1-t)p_i+tp_i+1" equation and return a new list of larped points.<br><br>
 
 <b>Show a screenshot of bez/teapot.bez (not .dae) evaluated by your implementation.</b><br><br>
 <div class="row">
