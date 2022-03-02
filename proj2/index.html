@@ -1,7 +1,585 @@
+<!DOCTYPE html>
 <html>
-	<head>
-	</head>
-	<body>
-		Project 2 here
-	</body>
+<head>
+<title>Page Title</title>
+
+<script src="/js/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+<script type="text/javascript" src="LaTeXMathML.js">
+  <script defer src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+(function () {
+  var script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+  script.async = true;
+  document.head.appendChild(script);
+})();
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "200px";
+  document.getElementById("main").style.marginLeft = "200px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<style>
+
+code {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  color: #336699;
+  padding: 2px;
+  font-size: 80%;
+  line-height: 1.5;
+}
+.MathJax {
+font-size: 1.2em;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+html {
+    margin:    0 auto;
+    max-width: 1200px;
+}
+body {
+  background-color: RGB(250,250,250);
+  color: #303060;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+box-sizing: border-box;
+  width: 100%; 
+  padding: 20px;   
+  margin: auto;
+}
+p.big {
+  line-height: 1.5;
+}
+figure figcaption {
+    text-align: center;
+}
+figure {
+    display: block;
+    margin: 0 1em 1em 0;
+    vertical-align: middle;
+    text-align: center;
+    max-height: 80%;  
+    max-width: 80%; 
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin-left: auto;
+    margin-right: auto ;
+}
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.main {
+  vertical-align: middle;
+  margin-left: 230px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  position: relative;
+}
+.img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.box {
+  float: middle;
+  width: 80%;
+  padding: 20px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 230px;
+  position: fixed;
+  z-index: 1;
+  top: 50;
+  left: 0;
+
+  background-color: RGB(250,250,250);
+  overflow-x: hidden;
+  margin-top: 100px;
+  transition: 0.5s;
+
+}
+
+.sidenav a.first {
+  padding: 6px 8px 6px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #303060;
+  display: block;
+  text-align: right;
+}
+
+.sidenav a.second {
+  padding: 6px 8px 6px 70px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #303060;
+  display: block;
+  text-align: right;
+}
+
+.sidenav a.first:hover {
+  font-size: 25px;
+  font-weight: bold;
+}
+.sidenav a.second:hover {
+  font-size: 17px;
+  font-weight: bold;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.vl {
+  border-left: 5px;
+  height: 400px;
+  width : 1px;
+  position: absolute;
+  left: 218.5px;
+  top:  0 px;
+  background-image: linear-gradient( transparent, #303060, transparent);
+}
+.matrix {
+    position: relative;
+}
+
+.matrix:before, .matrix:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 1px solid #f1f1f1;
+    width: 6px;
+    height: 100%;
+}
+.matrix:before {
+    left: -6px;
+    border-right: 0px;
+}
+.matrix:after {
+    right: -6px;
+    border-left: 0px;
+}
+.matrix: td {
+    padding: 5px;    
+    text-align: center;
+}
+
+
+
+}
+
+
+</style>
+
+</head>
+<body>
+<div id="mySidebar" class="sidenav">
+  <div class="vl"></div>
+  <br><br><br>
+  <atopic><a class= 'second' href="#1" >Part 1 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#2" >Part 2 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#3" >Part 3 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#4" >Part 4 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#5" >Part 5 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#6" >Part 6 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#7" >Part 7 <span>&#8729;</span></a></atopic>
+</div>
+
+<div class="main">
+<br><br><br><br>
+<h1>Project 2: Mesh Edit</h1>
+
+<p style="font-size:15px;">CS 284a Computer graphics & Imaging </p> 2022 Spring Kaleab Belete, Xinwei Zhuang</p>
+Webpage: <a href="https://cal-cs184-student.github.io/sp22-project-webpages-xinwei-zhuang/proj1/index.html"> https://cal-cs184-student.github.io/sp22-project-webpages-xinwei-zhuang/proj2/index.html</a>
+
+<hr>
+
+<h2 id="1">Part 1: Bezier curves with 1D de Casteljau subdivision</h2>
+<b>Briefly explain de Casteljau's algorithm and how you implemented it in order to evaluate Bezier curves.</b><br><br>
+
+The basic steps for this part are:<br><br>
+1) If only one point is sent in for evaluation return the given point.<br><br>
+2) Otherwise use push_back and LERP the given list of points using the "(1-t)p_i+tp _i+1" equation and return a new list of larped points.<br><br>
+
+<b>Take a look at the provided .bzc files and create your own Bezier curve with 6 control points of your choosing. Use this Bezier curve for your screenshots below.</b><br><br>
+
+see bzc/curve3.bzc <br><br>
+
+<b>Show screenshots of each step / level of the evaluation from the original control points down to the final evaluated point. Press E to step through. Toggle C to show the completed Bezier curve as well.</b><br><br>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/p1a.png" style="width:100%">
+    <figcaption>Original control points</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/p1b.png" style="width:100%">
+    <figcaption>Toggle bezier curve</figcaption>
+</figure>
+  </div>
+</div>
+  <div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/p1c.png" style="width:100%">
+    <figcaption>Step 1</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/p1d.png" style="width:100%">
+    <figcaption>Step 2</figcaption>
+</figure>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/p1e.png" style="width:100%">
+    <figcaption>Step 3</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/p1f.png" style="width:100%">
+    <figcaption>Step 4</figcaption>
+</figure>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/p1g.png" style="width:100%">
+    <figcaption>Final evaluated point</figcaption>
+</figure>
+  </div>
+</div><br><br>
+<b>Show a screenshot of a slightly different Bezier curve by moving the original control points around and modifying the parameter t via mouse scrolling.</b><br><br>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/p1_q2.png" style="width:100%">
+    <figcaption>Modified bezier curve</figcaption>
+</figure>
+  </div>
+</div><br><br>
+
+<h2 id="2">Part 2: Bezier surfaces with separable 1D de Casteljau</h2>
+<b>Briefly explain how de Casteljau algorithm extends to Bezier surfaces and how you implemented it in order to evaluate Bezier surfaces.</b><br><br>
+
+1) The evaluate function loops through the 3D list of control points and make a 2D list of new points by calling evaluate 1D on each sublist in controlPoints using u for our t value. 
+Then with the new list of points, call evaluate 1D one last time with v as our t to get the final output on the bezier surface patch over (u, t).<br><br>
+2) In the evaluate1D function if only one point is sent in for evaluation return the given solo point 
+otherwise recursively call the function reducing the points each step using the evaluate step function to get the final intermediated output.<br><br>
+3) In the evaluateStep function if only one point is sent in for evaluation return the given point
+otherwise use push_back and LERP the given list of points using the "(1-t)p_i+tp _i+1" equation and return a new list of larped points.<br><br>
+
+<b>Show a screenshot of bez/teapot.bez (not .dae) evaluated by your implementation.</b><br><br>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/p2.png" style="width:100%">
+    <figcaption>teapot bez</figcaption>
+</figure>
+  </div>
+</div><br><br>
+
+<h2 id="3">Part 3: Area-weighted vertex normals</h2>
+<b>Briefly explain how you implemented the area-weighted vertex normals.</b><br><br>
+
+The basic steps for this part are:<br><br>
+1) Create a vector to hold areaWeightedAverage and a HalfedgeCIter h pointing oppsite the vertex then flip it with twin.<br><br>
+2) Make an hInit value to store the current h and use a do while loop until h becomes hInit, process each vertex by accumulating the cross product.<br><br>
+3) Process each step by accumulating the cross product of the vertex position - position and the next twin(set h to its next twin) vertex position - position(flip the cross product).<br><br>
+3) Return the unit normal of the areaWeightedAverage.<br><br>
+
+<b>Show screenshots of dae/teapot.dae (not .bez) comparing teapot shading with and without vertex normals. Use Q to toggle default flat shading and Phong shading.</b><br><br>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/p3a.png" style="width:100%">
+    <figcaption>Default flat shading</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/p3b.png" style="width:100%">
+    <figcaption>Phong shading</figcaption>
+</figure>
+  </div>
+</div><br><br>
+
+<h2 id="4">Part 4: Edge flip </h2>
+<b>Briefly explain how you implemented the edge flip operation and describe any interesting implementation / debugging tricks you have used.</b><br><br>
+
+This part was a bit more tricky and required planning before direct implementation. 
+The method that worked here was to draw out a mini diagram and lable all the halfedges, verticies, faces, and edges 
+then manually flip an edge in the diagram keeping track of all the things that would change after a flip. 
+After a few flips and analyzing the edge cases the basic logic for flipping was clear and it was only a matter of implementation.<br><br>
+
+In the code the basic steps are:<br><br>
+1) If there given edge is a boundry edge return the given edge. <br><br>
+2) Otherwise, there is a setup stage where the elements of the diagram are initalized and the basic relationship is setup.<br><br>
+3) Afterwords, the relationships are updated using the initalized variables with either set neighbor or direct assignment.<br><br>
+
+<b>Show screenshots of a mesh before and after some edge flips.</b><br><br>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/p3a.png" style="width:100%">
+    <figcaption>Original image</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/p4a.png" style="width:100%">
+    <figcaption>Flip set 1</figcaption>
+</figure>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/p4b.png" style="width:100%">
+    <figcaption>Flip set 2</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/p4c.png" style="width:100%">
+    <figcaption>Flip set 3</figcaption>
+</figure>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/p4d.png" style="width:100%">
+    <figcaption>Final flip set</figcaption>
+</figure>
+  </div>
+</div><br><br>
+<b>Write about your eventful debugging journey, if you have experienced one.</b><br><br>
+The debugging was done on paper while writing out the solution, there were no major bugs that required using the C++ debugging tools. 
+
+
+
+<h2 id="5">Part 5 Edge split</h2>
+From a edge, we split the two adjacent mesh by the diagram showed below. Because there are so many pointers, we made all pointer explicit, even those who are unecessary. 
+
+<figure>
+<p><img src="image/part5_split.png" style="width:600px">
+<figcaption>Mesh splitting diagram</figcaption>
+</figure>
+
+
+<h3> Results</h3>
+<b>A mesh before and after some edge splits</b>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/part5_1_before.png" style="width:100%">
+    <figcaption>before</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/part5_1_after.png" style="width:100%">
+    <figcaption>after</figcaption>
+</figure>
+  </div>
+</div>
+
+<b>a mesh before and after a combination of both edge splits and edge flips</b>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/part5_original.png" style="width:100%">
+    <figcaption>before</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/flip_split.png" style="width:100%">
+    <figcaption>after</figcaption>
+</figure>
+  </div>
+</div>
+
+<h3> Debugging journey...</h3>
+After first thought that it might be easy to have bugs in the pointers and reinitiation, (after half an hour) it turns out to be the position of new vertex is calculated with the wrong index...
+
+<h3>Boundary edges</h3>
+<b>A mesh before and after some edge splits</b>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/part6_beetle_before.png" style="width:100%">
+    <figcaption>before</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/part6_beetle_after.png" style="width:100%">
+    <figcaption>after</figcaption>
+</figure>
+  </div>
+</div>
+
+
+<h2 id="6">Part 6 Loop subdivision for mesh upsampling</h2>
+<figure>
+<p><img src="image/part6_0.jpg" style="width:600px">
+<figcaption>Vertex updates</figcaption>
+</figure>
+Step A: Compute the positions of both newand old vertices using the original mesh. We updates the vertex coordinates as <br>
+New vertex = 3/8 * (A + B) + 1/8 * (C + D)<br>
+Old vertex = (1 - n * u) * original_position + u * original_neighbor_position_sum<br>
+
+<figure>
+<p><img src="image/part6_0_1.jpg" style="width:600px">
+</figure>
+Then we performed edge splitting and flipping. With a mesh that has good edges, we updates all the vertex coordinates with the previously computed values. 
+
+<h3> observations </h3>
+After subdivision, hte sharp corners are smoothed out, and has a tendency to become a sphere shape if the topology is sphere and becomes a donut if the topology is circle. 
+<figure>
+<p><img src="image/part6_00.png" style="width:600px">
+</figure>
+<figure>
+<p><img src="image/part6_01.png" style="width:600px">
+</figure>
+
+For finer geometries, subdivision can make the silhouette and the connections smoother, but no significant change in geometry. 
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/part5_teapot0.png" style="width:100%">
+    <figcaption>before</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/part5_teapot1.png" style="width:100%">
+    <figcaption>after</figcaption>
+</figure>
+  </div>
+</div>
+
+
+
+<h3> asymmetric cube </h3>
+For the cube case, it becomes slightly asymmetric after several subdivisions. This is due to the non-uniform mesh construction. It can be fixed by preprocessing the cubes with edge splits. Below is the demon for the mesh processing, the original mesh subdivision, and the preprocessed mesh subdivision. The preprocessed cube shows no more assymetric shape. 
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/part6_cube_before.png" style="width:100%">
+    <figcaption>original mesh</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/part6_cube_after.png" style="width:100%">
+    <figcaption>uniform mesh</figcaption>
+</figure>
+  </div>
+</div>
+Here we modify all the faces of the cube with symmetrical mesh edges.
+
+<figure>
+<p><img src="image/cubes1.png" style="width:600px">
+<figcaption>Cube subdivision, original</figcaption>
+</figure>
+<figure>
+<p><img src="image/cubes2.png" style="width:600px">
+<figcaption>Cube subdivision, preprocessed</figcaption>
+</figure>
+
+<h3> preserve edge </h3>
+By performing similar splitting stretegy to the cube we can make the cube also reserve some edge. 
+<figure>
+<p><img src="image/cubes3_all.png" style="width:600px">
+<figcaption>Cube subdivision, preserved edge</figcaption>
+</figure>
+
+
+<h2 id="7">Part 7: Design and edit your own mesh!</h2>
+
+mesh refine: <br>
+We used mirror modifier to make the model symmetrical. We used scale face to make the torsso, arms and legs more realistic, and use scale + rotation to add some details such as shoulder. 
+
+
+<figure>
+<p><img src="image/part7_0.png" style="width:50%">
+  <figcaption>model</figcaption>
+</figure>
+
+
+<figure>
+<p><img src="image/part7_subd.png" style="width:100%">
+  <figcaption>model after subdivision</figcaption>
+</figure>
+
+
+
+<h3> Bugart</h3>
+<figure>
+<p><img src="image/bugart.gif" style="width:100%">
+</figure>
+
+</ul>
+
+</div>
+
+</body>
 </html>
