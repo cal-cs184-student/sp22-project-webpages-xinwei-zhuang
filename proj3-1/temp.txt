@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Direct illumination as the name suggests is when we only consider direct light sources when lighting our scene, we can do this by
 
 1) Implementing the bidirectional scattering distribution function (BSDF), to represent the colors produced in the outwards direction towards an incoming ray only considering uniform scattering and without negative interaction between incoming and outgoing light, by setting our defuse f function to be reflectance over pi and our sample f function to first updating the *wi to get sample over the pdf from the sample then calling f with wo and *wi.
@@ -49,4 +50,57 @@ Walk through your implementation of the adaptive sampling.
 
 We can see that Monte Carlo ray tracing does well in approximating light but it still has has a lot of noise, by selective increasing the sample rate for the given pixels in a scene we can reduce noise while keeping in mind the difficult of a pixel to converge.
  
+=======
+Direct illumination as the name suggests is when we only consider direct light sources when lighting our scene, we can do this by
+
+1) Implementing the bidirectional scattering distribution function (BSDF), to represent the colors produced in the outwards direction towards an incoming ray only considering uniform scattering and without negative interaction between incoming and outgoing light, by setting our defuse f function to be reflectance over pi and our sample f function to first updating the *wi to get sample over the pdf from the sample then calling f with wo and *wi.
+
+2) We can have zero bounce (the light given off by a source) simply equal to the emissions of the intersection bsdf and the one bounce(the light that interacts directly) emulated by either uniform hemisphere sampling or importance sampling based on the given command line input.
+
+3) Implementing the uniform hemisphere function, which approximates direct lighting by taking uniform samples around a given point over a hemisphere, by creating an offset ray in the direction of the hit point, checking for intersections with that ray and our bvh, and if an intersection is found updating the outwards lighting by multiplying cos theta of the sample with the emissions of the intersection bsdf and the f of the w out and sample all divided by num_sample/2Pi(Monte Carlo). The result is a grainy image as this function gives equal importance to all possible incoming rays.
+
+4) Implementing Importance sampling which approximates lighting by sampling direct light sources instead of sampling a uniformly over a hemisphere. The basic function this time loops over each light in the scene and calls sample L with the hit point, and pointers for a w input vector and distance and pdf doubles. Then we check if the z axis of (w2o * w_in) are positive with cos theta and create a ray in the direction of the of the hit point with our w input, making sure to update the bounds, and then if there is no intersection with the bvh root and the ray we update the light out in a similar way the the uniform case  using the new sample method and pdf generated from that sample and feeding our (w2o * w_in) to f instead of the sample. This creates a clearer image as the samples are from the things that are most important (direct light sources) and the final picture better approximates a realistic lighting scenario.
+
+
+Here is a base line images of both implementations:
+
+
+
+
+
+
+Compare the results between uniform hemisphere sampling and lighting sampling in a one-paragraph analysis.
+
+As described above uniform hemisphere sampling samples uniformly over an hemisphere for a given point and does not take into consideration the things that are most likely to contribute to the lighting of the scene. Importance sampling samples the important sources (light sources) directly giving the better representation in the final output.Its easy to understand why this changing the method to favor the things that give off the most light would lead to better results. As seen above, Importance sampling is less noisy and it ultimately gives us a better lighting approximation in the direct sampling case.
+
+
+
+
+
+
+
+
+Walk through your implementation of the indirect lighting function.
+Show some images rendered with global (direct and indirect) illumination. Use 1024 samples per pixel.
+
+Global illumination improves on direct illumination by now handling all light including light from secondary sources which only indirectly contribute light to a point in a scene.
+To do this we now use an indirect lighting function which we use over of just considering zero bounce + once bounce we no use zero bounce + atleast one bounce.
+
+The atleast one bounce function is implemented by first setting the L out to a single one bounce then while the given rays depth is not at the max ray depth we use Russian roulette with the coin flip function and an arbitrary cpdf probability and use the sample f function giving it the w out and pointers too a vector w in and a pdf. After we create an offset ray along the hit point, update its parameters(making sure to increment the depth), check for a bvh intersection with the ray and if there is an intersection we add to L out by recursively calling the function and multiplying the output of the recursive call by the sample and cos theta of the w in vector dividing by pdf*cpdf. At the end we return L out and our base case is triggered when we reach max depth(a ray cant bounce anymore). Russian roulette can do a good job at approximating the lighting output and stopping at an appropriate point where the rays are too deep to adequately contribute to the lighting of the scene.
+
+
+
+
+
+
+
+
+
+
+
+Walk through your implementation of the adaptive sampling.
+
+We can see that Monte Carlo ray tracing does well in approximating light but it still has has a lot of noise, by selective increasing the sample rate for the given pixels in a scene we can reduce noise while keeping in mind the difficult of a pixel to converge.
+ 
+>>>>>>> 8bd1685aaa7f1580c457d2d4181ac70615697d98
 This is done by updating the ray trace pixel function.
