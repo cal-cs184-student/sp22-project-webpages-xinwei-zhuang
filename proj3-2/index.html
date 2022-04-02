@@ -411,7 +411,7 @@ In <code>max_ray_depth = 100</code>, there is not noticable difference between r
 
 
 <h2 id="4">Part 4: Depth of Field</h2>
-<b>For these subparts, we recommend using a microfacet BSDF scene to show off the cool out of focus effects you can get with depth of field!<br><br>
+<b>For these subparts, we recommend using a microfacet BSDF scene to show off the cool out of focus effects you can get with depth of field!</b><br><br>
 
 In a few sentences, explain the differences between a pinhole camera model and a thin-lens camera model.<br><br>
 Prior to this part we have been using a simple pinhole camera model, which is effectively a camera without a lens passing all represented light in a scene from one side of a pinhole to another, and projecting an image (initially inverted) on the opposite side with the size of the projection being based on the distance between a given represented object and the pinhole. As all light passes through the same simple hole this model struggles to represent images taken by real cameras (we cant have refracted light rays, selective focus, etc...). A thin-lens camera model is a camera approximation that assumes the thickness of the camera lens is negligible(simplifying our representation) while still allowing us to represent concepts like refracting light ray and selective focus(depth of field) based on the other properties of the lens and camera. The implementation for this part is directly taken from the project documentation and draws on generate_ray from the previous assignment to achieve the desired properties of the thin lens as shown in the diagram.<br><br>
@@ -462,7 +462,7 @@ More labled examples can be found in <a href="image/P4/Dx/Others/index.html">ima
 </figure>
   </div>
 </div>
-
+<b>
 Show a sequence of 4 pictures with visibly different aperture sizes, all focused at the same point in a scene.</b><br><br>
 
 More labled examples can be found in image/P4/Bx/Other/ <br><br>
