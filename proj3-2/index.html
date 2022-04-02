@@ -1,7 +1,501 @@
+<!DOCTYPE html>
 <html>
-	<head>
-	</head>
-	<body>
-		Project 3-2 here
-	</body>
+<head>
+<title>Page Title</title>
+
+<script src="/js/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+<script type="text/javascript" src="LaTeXMathML.js">
+  <script defer src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+(function () {
+  var script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+  script.async = true;
+  document.head.appendChild(script);
+})();
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "200px";
+  document.getElementById("main").style.marginLeft = "200px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<style>
+
+code {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  color: #336699;
+  padding: 2px;
+  font-size: 80%;
+  line-height: 1.5;
+}
+.MathJax {
+font-size: 1.2em;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+html {
+    margin:    0 auto;
+    max-width: 1200px;
+}
+body {
+  background-color: RGB(250,250,250);
+  color: #303060;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+box-sizing: border-box;
+  width: 100%; 
+  padding: 20px;   
+  margin: auto;
+}
+p.big {
+  line-height: 1.5;
+}
+figure figcaption {
+    text-align: center;
+}
+figure {
+    display: block;
+    margin: 0 1em 1em 0;
+    vertical-align: middle;
+    text-align: center;
+    max-height: 80%;  
+    max-width: 80%; 
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin-left: auto;
+    margin-right: auto ;
+}
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.main {
+  vertical-align: middle;
+  margin-left: 230px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  position: relative;
+}
+.img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.box {
+  float: middle;
+  width: 80%;
+  padding: 20px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 230px;
+  position: fixed;
+  z-index: 1;
+  top: 50;
+  left: 0;
+
+  background-color: RGB(250,250,250);
+  overflow-x: hidden;
+  margin-top: 100px;
+  transition: 0.5s;
+
+}
+
+.sidenav a.first {
+  padding: 6px 8px 6px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #303060;
+  display: block;
+  text-align: right;
+}
+
+.sidenav a.second {
+  padding: 6px 8px 6px 70px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #303060;
+  display: block;
+  text-align: right;
+}
+
+.sidenav a.first:hover {
+  font-size: 25px;
+  font-weight: bold;
+}
+.sidenav a.second:hover {
+  font-size: 17px;
+  font-weight: bold;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.vl {
+  border-left: 5px;
+  height: 400px;
+  width : 1px;
+  position: absolute;
+  left: 218.5px;
+  top:  0 px;
+  background-image: linear-gradient( transparent, #303060, transparent);
+}
+.matrix {
+    position: relative;
+}
+
+.matrix:before, .matrix:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 1px solid #f1f1f1;
+    width: 6px;
+    height: 100%;
+}
+.matrix:before {
+    left: -6px;
+    border-right: 0px;
+}
+.matrix:after {
+    right: -6px;
+    border-left: 0px;
+}
+.matrix: td {
+    padding: 5px;    
+    text-align: center;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+}
+
+
+</style>
+
+</head>
+<body>
+<div id="mySidebar" class="sidenav">
+  <div class="vl"></div>
+  <br><br><br>
+  <atopic><a class= 'second' href="#1" >Part 1 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#4" >Part 4 <span>&#8729;</span></a></atopic>
+</div>
+
+<div class="main">
+<br><br><br><br>
+<h1>Project 3-2: PathTracer</h1>
+
+<p style="font-size:15px;">CS 284a Computer graphics & Imaging </p> 2022 Spring Kaleab Belete, Xinwei Zhuang</p>
+Webpage: <a href="https://cal-cs184-student.github.io/sp22-project-webpages-xinwei-zhuang/proj3-2/index.html"> https://cal-cs184-student.github.io/sp22-project-webpages-xinwei-zhuang/proj3-2/index.html</a>
+
+<hr>
+
+<h2 id="1">Part 1: Mirror and Glass Materials</h2>
+
+<h3>Reflection</h3>
+We defined two function to reflect and refract light. For reflection, it's simply the incident ray reflected in the normal vector of the object, i.e.  
+<code>
+wi = (-wo.x, -wo.y, wo.z)
+</code><br>
+
+Then to render objects with mirror material, we reflect every incident ray, without any sampling (pdf = 1), and return <code>
+reflectance / abs_cos_theta(*wi)
+</code>. <br><br>
+The maximum ray depth must greater than 1 because we cannot see the object if we only observe  direct lighting. It must have at least one bounce. 
+
+<h3>Refraction</h3>
+We firstly wrote a helper function for refraction <br><code>
+wi = (- &eta; wo.x, - &eta; wo.y, sign*sqrt(1-&eta;*&eta;*(1-wo.z*wo.z)))
+</code><br>
+where the sign is opposite to <code>wo.z</code>, and <code>&eta; = 1.0/ior</code> if light is entering the non-air material, and <code>&eta; = ior</code> if the light is exiting. 
+
+We check whether the refraction happens or not (whether it's a total internal reflection) by a discriminant <code>
+1-&eta;*&eta;*(1-cos2&theta;)
+</code>
+If it's negative, then we return false, meaning there's no refraction but only reflection, and update the wo with reflection function. If it's positive, then we further calculate the Schilick's reflection coefficient R by $$ R(\theta) = R_0 + (1-R_0)(1-cos\theta)^2$$ where $R_0 = (\frac{1-ior}{i+ior})^2$.
+<br>
+Based on the R value, we choose whether it's a refraction light or a reflect light with a coin_flip function. 
+<br>
+For the reflection ray, we update <code>wi</code> with reflection function, and set <code>pdf = R</code>, and return <code>R * reflectance / abs_cos_theta(*wi)</code><br>
+For the refraction ray, we update wi with refraction function, and set <code>pdf = 1-R</code>, and return <code>(1-R) * transmittance / abs_cos_theta(*wi) / eta^2</code> where eta is the same as discussed above. Results combining two material are shown below. <br>
+
+
+
+<h3>Results</h3>
+All renders are rendered with <code>-t 8 -s 256 - l 4 - m 7</code>
+<figure>
+  <p><img src="image/1_sphere.png" style="width:100%">
+    <figcaption></figcaption>
+</figure>
+<figure>
+  <p><img src="image/1_dragon.png" style="width:100%">
+    <figcaption></figcaption>
+</figure>
+<figure>
+  <p><img src="image/1_lucy.png" style="width:100%">
+    <figcaption></figcaption>
+</figure>
+
+
+<h4>Sequence rendering of six images of scene CBspheres.dae with max_ray_depth 0, 1, 2, 3, 4, 5, and 100 and with 64 samples per pixel and 4 samples per light.</h4>
+<h4>Point out the new multibounce effects that appear in each image.</h4>
+<h4>Explain how these bounce numbers relate to the particular effects that appear.</h4>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/1_sphere_0.png" style="width:100%">
+    <figcaption>max_ray_depth = 0</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/1_sphere_1.png" style="width:100%">
+    <figcaption>max_ray_depth = 1</figcaption>
+</figure>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/1_sphere_0_note.png" style="width:100%">
+    <figcaption>max_ray_depth = 0 ray path</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/1_sphere_1_note.png" style="width:100%">
+    <figcaption>max_ray_depth = 1 ray path</figcaption>
+</figure>
+  </div>
+</div>
+
+In <code>max_ray_depth = 0</code>, there is only the light source that emits light. With <code>max_ray_depth = 1</code>, we can see the sorrounding but we cannot observe objects with glass and mirror material because reflection involves at least 2 bounces, and refraction involves at least 3 bounces. 
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/1_sphere_2.png" style="width:100%">
+    <figcaption>max_ray_depth = 2</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/1_sphere_3.png" style="width:100%">
+    <figcaption>max_ray_depth = 3</figcaption>
+</figure>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/1_sphere_2_note.png" style="width:100%">
+    <figcaption>max_ray_depth = 2 ray path</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/1_sphere_3_note.png" style="width:100%">
+    <figcaption>max_ray_depth = 3 ray path</figcaption>
+</figure>
+  </div>
+</div>
+
+In <code>max_ray_depth = 2</code>, we can see the sphere with mirror material, but it doesn't reflect the light from the ceiling (which requires 3 bounces). The glass material has a very dark appearance (a pure reflection so far). With <code>max_ray_depth = 3</code>, we can see the mirror sphere almost correctly appears itself, and the glass material is also appearing with 3 bounces of light. Besides, the light the glass sphere cast to the floor is visible. 
+</ol>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/1_sphere_4.png" style="width:100%">
+    <figcaption>max_ray_depth = 4</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/1_sphere_5.png" style="width:100%">
+    <figcaption>max_ray_depth = 5</figcaption>
+</figure>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/1_sphere_4_note.png" style="width:100%">
+    <figcaption>max_ray_depth = 4 ray path</figcaption>
+</figure>
+  </div>
+  <div class="column">
+  </div>
+</div>
+
+In <code>max_ray_depth = 4</code>, we can see two shiny light casted from the glass sphere, one on the floor and one on wall. This happens with 4 bounces of light. With <code>max_ray_depth = 5</code>, there is no significant visual difference other than the general scene is lit up a bit. 
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/1_sphere_100.png" style="width:100%">
+    <figcaption>max_ray_depth = 100</figcaption>
+</figure>
+  </div>
+</div>
+
+In <code>max_ray_depth = 100</code>, there is not noticable difference between ray depth = 100 and ray depth = 5, other than the scene is lit up a little bit.
+
+
+
+
+
+
+<h2 id="4">Part 4: Depth of Field</h2>
+<b>For these subparts, we recommend using a microfacet BSDF scene to show off the cool out of focus effects you can get with depth of field!<br><br>
+
+In a few sentences, explain the differences between a pinhole camera model and a thin-lens camera model.<br><br>
+Prior to this part we have been using a simple pinhole camera model, which is effectively a camera without a lens passing all represented light in a scene from one side of a pinhole to another, and projecting an image (initially inverted) on the opposite side with the size of the projection being based on the distance between a given represented object and the pinhole. As all light passes through the same simple hole this model struggles to represent images taken by real cameras (we cant have refracted light rays, selective focus, etc...). A thin-lens camera model is a camera approximation that assumes the thickness of the camera lens is negligible(simplifying our representation) while still allowing us to represent concepts like refracting light ray and selective focus(depth of field) based on the other properties of the lens and camera. The implementation for this part is directly taken from the project documentation and draws on generate_ray from the previous assignment to achieve the desired properties of the thin lens as shown in the diagram.<br><br>
+<a href="image/P4/camera.txt"> camera.txt used to generate images below </a> <br><br>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/P4/pinhole.png" style="width:100%">
+    <figcaption>Pinhole camera model</figcaption>
+</figure>
+</div>
+<div class="column">
+    <figure>
+  <p><img src="image/P4/thin_principles.jpeg" style="width:100%">
+    <figcaption>Thin-lens camera model diagram</figcaption>
+</figure>
+  </div>
+</div>
+Show a "focus stack" where you focus at 4 visibly different depths through a scene.<br><br>
+
+<a href="image/P4/Dx/Others/"> More labled examples </a> <br><br>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/P4/Dx/CBdragon_s64_l4_m5_b008_d528.png" style="width:100%">
+    <figcaption>-s 64 -l 4 -m 5 -b 0.08 -d 5.28</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/P4/Dx/CBdragon_s64_l4_m5_b008_d504.png" style="width:100%">
+    <figcaption>-s 64 -l 4 -m 5 -b 0.08 -d 5.04</figcaption>
+</figure>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/P4/Dx/CBdragon_s64_l4_m5_b008_d456.png" style="width:100%">
+    <figcaption>-s 64 -l 4 -m 5 -b 0.08 -d 4.56</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/P4/Dx/CBdragon_s64_l4_m5_b008_d432.png" style="width:100%">
+    <figcaption>-s 64 -l 4 -m 5 -b 0.08 -d 4.32</figcaption>
+</figure>
+  </div>
+</div>
+
+Show a sequence of 4 pictures with visibly different aperture sizes, all focused at the same point in a scene.</b><br><br>
+
+<a href="image/P4/Bx/Other/"> More labled examples </a> <br><br>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/P4/Bx/CBdragon_s64_l4_m5_b056_d456.png" style="width:100%">
+    <figcaption>-s 64 -l 4 -m 5 -b 0.56 -d 4.56</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/P4/Bx/CBdragon_s64_l4_m5_b040_d456.png" style="width:100%">
+    <figcaption>-s 64 -l 4 -m 5 -b 0.40 -d 4.56</figcaption>
+</figure>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image/P4/Bx/CBdragon_s64_l4_m5_b024_d456.png" style="width:100%">
+    <figcaption>-s 64 -l 4 -m 5 -b 0.24 -d 4.56</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image/P4/Bx/CBdragon_s64_l4_m5_b008_d456.png" style="width:100%">
+    <figcaption>-s 64 -l 4 -m 5 -b 0.08 -d 4.56</figcaption>
+</figure>
+  </div>
+</div>
+
+
+</body>
 </html>
