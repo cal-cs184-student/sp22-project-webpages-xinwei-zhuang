@@ -22,7 +22,7 @@
 		var repo_name = window.location.href.substring(a+3)
 		for(var i = 0; i < links.length; i++){
 			var link = links[i]
-			var actual_name = link.href.substring(link.href.indexOf(".io")+3)
+			var actual_name = link.href.substring(link.href.indexOf(".io")+4)
 			link.href = repo_name + actual_name
 		}
 	</script>
