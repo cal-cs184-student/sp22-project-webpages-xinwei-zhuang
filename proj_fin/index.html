@@ -237,16 +237,17 @@ tr:nth-child() {
 <div id="mySidebar" class="sidenav">
   <div class="vl"></div>
   <br><br><br>
-  <atopic><a class= 'second' href="#1" >Idea 1. NeRF <span>&#8729;</span></a></atopic>
-  <atopic><a class= 'second' href="#2" >Idea 2. NLP <span>&#8729;</span></a></atopic>
-  <atopic><a class= 'second' href="#3" >Idea 3. Simulation <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#p1" >Idea 1. NeRF <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#p2" >Idea 2. NLP <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#p3" >Idea 3. Simulation <span>&#8729;</span></a></atopic>
   <atopic><a class= 'second' href="#Resourse" >Resources <span>&#8729;</span></a></atopic>
 </div>
 
 <div class="main">
 <br><br><br><br>
 <h1>Final Project proposal</h1>
-<h2>Exploring possible applications of ML methods in graphics generation (going from drawings, pictures, or text to a graphical output) or designing rule based simulations.</h2>
+(we havn't decided which direction to go so we presented 3 ideas here. Any suggestion would be appreciated!)
+<h3>Exploring possible applications of ML methods in graphics generation (going from drawings, pictures, or text to a graphical output) or designing rule based simulations.</h3>
 
 <p style="font-size:15px;">CS 284a Computer graphics & Imaging 2022 Spring</p>  
 Team: Gregoria Millensifer, Kaleab Belete, Tristan Streichenberge, Xinwei Zhuang<br><br>
@@ -254,7 +255,7 @@ Webpage: <a href="https://cal-cs184-student.github.io/sp22-project-webpages-xinw
 
 <hr>
 
-<h2 id="3">Idea 1 Transform drawings into scenes </h2>
+<h2 id="p1">Idea 1 Transform drawings into scenes </h2>
 <h4>Problem description</h4>
 
 
@@ -267,15 +268,15 @@ Though in some disciplines, there exists numerous amounts of data. In the archit
 The evaluation will be to compare the difference between the generated scene with the actual scene/model. 
 
 <h4>Goals</h4>
-(1) we plan to deliver: when inputting a <br>
-(2) we hope to deliver: <br>
+(1) we plan to deliver: when inputting an image, outputting a 3D model<br>
+(2) we hope to deliver: inputting multiple image from different perspective, generate model with high quality. <br>
 
 
 <h4>Schedule</h4>
 <table>
   <tr>
     <td>Week 1 </td>
-    <td>data preparation: scraping from google street view, and generate image contours from the image. </td>
+    <td>data preparation: scraping from openstreetmap, collect building modelling data and for each buiding, take snapshot for different perspectives. </td>
   </tr>
   <tr>
     <td>Week 2</td>
@@ -283,24 +284,24 @@ The evaluation will be to compare the difference between the generated scene wit
   </tr>
   <tr>
     <td>Week 3 </td>
-    <td></th>
+    <td>Debugging and finalize model,Evaluation: compare the simulation and the real-world documentation </td>
   </td>
   <tr>
     <td>Week 4</td>
-    <td>Evaluation: compare the simulation and the real-world documentation & write up </td>
+    <td> Clean up the final output and begin building a final deliverable(report, code, and presentation).</td>
   </tr>
 </table>
 
 <h4>Reference</h4>
-Mildenhall, Ben, et al. "Nerf: Representing scenes as neural radiance fields for view synthesis." European conference on computer vision. Springer, Cham, 2020.<br>
-Delanoy, Johanna, et al. "3d sketching using multi-view deep volumetric prediction." Proceedings of the ACM on Computer Graphics and Interactive Techniques 1.1 (2018): 1-22.<br>
-
+Mildenhall B, Srinivasan PP, Tancik M, Barron JT, Ramamoorthi R, Ng R. Nerf: Representing scenes as neural radiance fields for view synthesis. InEuropean conference on computer vision 2020 Aug 23 (pp. 405-421). Springer, Cham.<br>
+Delanoy J, Aubry M, Isola P, Efros AA, Bousseau A. 3d sketching using multi-view deep volumetric prediction. Proceedings of the ACM on Computer Graphics and Interactive Techniques. 2018 Jul 25;1(1):1-22.<br>
+Isola P, Zhu JY, Zhou T, Efros AA. Image-to-image translation with conditional adversarial networks. InProceedings of the IEEE conference on computer vision and pattern recognition 2017 (pp. 1125-1134).
 <a href="https://phillipi.github.io/pix2pix/"> https://phillipi.github.io/pix2pix/</a>
 
 
 
 
-<h2 id="3">Idea 2: Applications of NLP to Graphics Manipulation</h2>
+<h2 id="p2">Idea 2: Applications of NLP to Graphics Manipulation</h2>
 
 <h4>Problem description</h4>
 This is an attempt to generate contextually relevant graphics based on some input text using NLP to process the input text then mapping the output to a set of scenes. The idea of generating scenes without much technical knowledge is an interesting problem with a lot of possible applications in areas ranging from advertisement to film and video games. The challenges are the accuracy of the text processing, generating appropriate scenes, the time it may take to work with a complex model, having to adequately map the text to the appropriate set of images in a limited set, and more. As this will likely be reliant on Deep Neural Networks it may take time to train and the quality of the output will be dependent on the quality of the data. This is on top of having to build or generate a set of scenes that can adequately represent a collection of input text. 
@@ -343,9 +344,15 @@ GPT: <a href="https://github.com/openai/gpt-2 ">https://github.com/openai/gpt-2 
 
 
 
-<h2 id="3">Idea 3 Agent-based crowd simulation</h2>
+<h2 id="p3">Idea 3 Agent-based crowd simulation</h2>
 
 <h4>Problem description</h4>
+
+<figure>
+  <p><img src="image/Animation2.gif" style="width:60%">
+    <figcaption>expected results (ref. <a href="http://gamma.cs.unc.edu/DCrowd/">Directing Crowd Simulations Using Navigation Fields</a>)</figcaption>
+</figure>
+
 We want to build a simulation for circulation in complex building settings. It is crucial when architects make the design decisions for choosing the best circulation plan, especially for large activities. Failure in circulation design can cause problems ranging from making it confusing to find ways and locating to Stampede. 
 We will use particle simulation incorporating human interaction between each other (such as the preference of turning at a crossroad, not being too far or too close to the majority of people…) to perform circulation simulation within a building, and use the simulation to evaluate the plan. 
 
@@ -371,7 +378,7 @@ For the evaluation, a potential evaluation matrix would be finding a real-world 
   </tr>
   <tr>
     <td>Week 3 </td>
-    <td>more complex interactions and parameterized inputs (crowd density, preference…) and add emergency circumstances (eg. a door suddenly closed)</th>
+    <td>more complex interactions and parameterized inputs (crowd density, preference, personalities …) and add emergency circumstances (eg. a door suddenly closed) and/or more exicting unrealistic scenes such as the one Ren showed on the lecture</th>
   </td>
   <tr>
     <td>Week 4</td>
