@@ -213,7 +213,7 @@ figure {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 80%;
+  width: 90%;
 }
 
 td, th {
@@ -222,7 +222,7 @@ td, th {
   padding: 8px;
 }
 
-tr:nth-child(even) {
+tr:nth-child() {
   background-color: #dddddd;
 }
 
@@ -237,21 +237,160 @@ tr:nth-child(even) {
 <div id="mySidebar" class="sidenav">
   <div class="vl"></div>
   <br><br><br>
-  <atopic><a class= 'second' href="#proposal" >Proposal <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#1" >Idea 1. NeRF <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#2" >Idea 2. NLP <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#3" >Idea 3. Simulation <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#Resourse" >Resources <span>&#8729;</span></a></atopic>
 </div>
 
 <div class="main">
 <br><br><br><br>
-<h1>Final Project</h1>
+<h1>Final Project proposal</h1>
+<h2>Exploring possible applications of ML methods in graphics generation (going from drawings, pictures, or text to a graphical output) or designing rule based simulations.</h2>
 
-<p style="font-size:15px;">CS 284a Computer graphics & Imaging </p> 2022 Spring Kaleab Belete, Xinwei Zhuang</p>
+<p style="font-size:15px;">CS 284a Computer graphics & Imaging 2022 Spring</p>  
+Team: Gregoria Millensifer, Kaleab Belete, Tristan Streichenberge, Xinwei Zhuang<br><br>
 Webpage: <a href="https://cal-cs184-student.github.io/sp22-project-webpages-xinwei-zhuang/proj_fin/index.html"> https://cal-cs184-student.github.io/sp22-project-webpages-xinwei-zhuang/proj_fin/index.html</a>
 
 <hr>
 
-<h2 id="1">Proposal</h2>
+<h2 id="3">Idea 1 Transform drawings into scenes </h2>
+<h4>Problem description</h4>
 
-<h3>Reference</h3>
+
+
+
+<h4>Deliverables</h4>
+Though in some disciplines, there exists numerous amounts of data. In the architectural field, the data is highly limited. We hypothesize that the network can generate a satisfying image from a single photo input. The aim is to build a game engine to generate scenes from drawings using machine learning algorithms such as Nerf (Mildenhall, 2020) and deep volumetric neural networks (Delanooy, 2018). We will provide an interactive tool for inputting a 2D sketch and generating either 2D scene or 3D models. 
+
+<h4>Evaluation matrix</h4>
+The evaluation will be to compare the difference between the generated scene with the actual scene/model. 
+
+<h4>Goals</h4>
+(1) we plan to deliver: when inputting a <br>
+(2) we hope to deliver: <br>
+
+
+<h4>Schedule</h4>
+<table>
+  <tr>
+    <td>Week 1 </td>
+    <td>data preparation: scraping from google street view, and generate image contours from the image. </td>
+  </tr>
+  <tr>
+    <td>Week 2</td>
+    <td>Using the framework of the NeRF, adjust parameters and train the model </td>
+  </tr>
+  <tr>
+    <td>Week 3 </td>
+    <td></th>
+  </td>
+  <tr>
+    <td>Week 4</td>
+    <td>Evaluation: compare the simulation and the real-world documentation & write up </td>
+  </tr>
+</table>
+
+<h4>Reference</h4>
+Mildenhall, Ben, et al. "Nerf: Representing scenes as neural radiance fields for view synthesis." European conference on computer vision. Springer, Cham, 2020.<br>
+Delanoy, Johanna, et al. "3d sketching using multi-view deep volumetric prediction." Proceedings of the ACM on Computer Graphics and Interactive Techniques 1.1 (2018): 1-22.<br>
+
+<a href="https://phillipi.github.io/pix2pix/"> https://phillipi.github.io/pix2pix/</a>
+
+
+
+
+<h2 id="3">Idea 2: Applications of NLP to Graphics Manipulation</h2>
+
+<h4>Problem description</h4>
+This is an attempt to generate contextually relevant graphics based on some input text using NLP to process the input text and mapping the output to a collection of scenes. The idea of generating scenes without much technical knowledge is an interesting problem with a lot of possible applications in areas ranging from advertisement to film and video games. The challenges are the accuracy of the text processing, the time it may take to train a complex model, having to adequately map the text to the appropriate set of images in a limited set, and more. As this will likely be reliant on Deep Neural Networks it will take time to train and the quality of the output will be dependent on the quality of the data. This is on top of having to build or generate a set of scenes that can adequately represent a collection of input text. 
+
+<h4>Goals</h4>
+The end goal is to have a simple interactive program that allows the user to input text and get a contextually relevant output in a graphics window. One possible application includes having an input text that will produce an animated reaction based on the content of the text. This could be live facial animation or full body animation as the text is being processed, where the animation depicts the reaction of a given character. Another possible application is the description of a scene in text being used to generate a graphical output. For training we plan on looking into models like GPT and some labeled datasets of images(ranging from academic labeled datasets to tools like google street view or facebooks labeled datasets). The measure of accuracy is fairly straightforward, as we introduce new text we would have a labeled expected output for the text and we can measure the total distance between our expected output and actual output in our test set.
+
+<h4>Deliverables</h4>
+(1) what you plan to deliver is the text processing setup, the graphics generation setup(including the set of scenes) and a final interactive program that can take an input text and generate a matching graphical scene or animation (on top of the other required documents).  The accuracy here is likely to be spotty but within a core section of input text it should perform relatively well. <br>
+(2) what you hope to deliver if time permits is a robust text to graphics pipeline (with the possibility of basic editing) that works well for a good representative subset of everyday words.
+
+
+<h4>Schedule</h4>
+<table>
+  <tr>
+    <td> Week 1 </td>
+    <td> Work out the basic text processing pipeline while beginning to build a set of animated scenes to map to the context of the text </th>
+  </td>
+  <tr>
+    <td>Week 2 & 3</td>
+    <td>Troubleshoot and begin integration of the text processing with graphical output. Add additional features (better processing, more scenes, improved performance, etc…) if there is extra time. </td>
+  </tr>
+  <tr>
+    <td>Week 4</td>
+    <td>Polish the final output and begin building a final deliverable(report, code, and presentation).</td>
+  </tr>
+</table>
+
+<h4>Reference</h4>
+Example Image description dataset: 
+<a href="https://arxiv.org/abs/1605.00459  "> https://arxiv.org/abs/1605.00459  </a>
+<br>
+
+GPT: <a href="https://github.com/openai/gpt-2 ">https://github.com/openai/gpt-2  </a>
+<br><br>
+
+
+
+
+
+
+<h2 id="3">Idea 3 Agent-based crowd simulation</h2>
+
+<h4>Problem description</h4>
+We want to build a simulation for circulation in complex building settings. It is crucial when architects make the design decisions for choosing the best circulation plan, especially for large activities. Failure in circulation design can cause problems ranging from making it confusing to find ways and locating to Stampede. 
+We will use particle simulation incorporating human interaction between each other (such as the preference of turning at a crossroad, not being too far or too close to the majority of people…) to perform circulation simulation within a building, and use the simulation to evaluate the plan. 
+
+<h4>Deliverables</h4>
+We will provide a demo for the simulation, the demo will show how people behave in a building with a complex plan, and we can change variables such as the number of people to see how people behave in different scenarios. The deliverables will be an interactive program. It might be done in unity. 
+
+<h4>Evaluation matrix</h4>
+For the evaluation, a potential evaluation matrix would be finding a real-world scenario (such as people entering a stadium) and comparing it with the generated simulation. 
+
+<h4>Goals</h4>
+(1) we plan to deliver:Our hypothesis is that through the simulation, we can inform the design process and choose a better circulation without confusing people. We will provide a simulation that is realistic enough to inform design decisions.<br>
+(2) we hope to deliver: adding more complex population settings to incorporate more scenarios (age, sex, …)
+
+<h4>Schedule</h4>
+<table>
+  <tr>
+    <td> Week 1 </td>
+    <td>prepare for the 3D model we are gonna use, set up in unity</th>
+  </td>
+  <tr>
+    <td>Week 2</td>
+    <td>write the swarm algorithm with simple interactions</td>
+  </tr>
+  <tr>
+    <td>Week 3 </td>
+    <td>more complex interactions and parameterized inputs (crowd density, preference…) and add emergency circumstances (eg. a door suddenly closed)</th>
+  </td>
+  <tr>
+    <td>Week 4</td>
+    <td>Evaluation: compare the simulation and the real-world documentation<br>
+Introducing more building plans and provide design insight for building plan<br>
+Write up </td>
+  </tr>
+</table>
+
+<h4>Reference</h4>
+<a href="https://repository.upenn.edu/cgi/viewcontent.cgi?article=1223&context=hms"> https://repository.upenn.edu/cgi/viewcontent.cgi?article=1223&context=hms</a>
+
+ <br>
+ <a href="https://github.com/crowddynamics/crowddynamics"> https://github.com/crowddynamics/crowddynamics</a>
+ <br>
+Swarm topic Ren mentioned in the lecture. 
+
+
+<h2 id="Resourse">Resources</h2>
+Laptop & google colab. Potentially unity if we were doing the idea 3. 
 
 
 
