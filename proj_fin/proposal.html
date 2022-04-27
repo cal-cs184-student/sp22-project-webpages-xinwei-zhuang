@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CS284a Final Project</title>
+
+<script src="/js/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+<script type="text/javascript" src="LaTeXMathML.js">
+  <script defer src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+(function () {
+  var script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+  script.async = true;
+  document.head.appendChild(script);
+})();
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "200px";
+  document.getElementById("main").style.marginLeft = "200px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<style>
+
+code {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  color: #336699;
+  padding: 2px;
+  font-size: 80%;
+  line-height: 1.5;
+}
+.MathJax {
+font-size: 1.2em;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+html {
+    margin:    0 auto;
+    max-width: 1200px;
+}
+body {
+  background-color: RGB(250,250,250);
+  color: #303060;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+box-sizing: border-box;
+  width: 100%; 
+  padding: 20px;   
+  margin: auto;
+}
+p.big {
+  line-height: 1.5;
+}
+figure figcaption {
+    text-align: center;
+}
+figure {
+    display: block;
+    margin: 0 1em 1em 0;
+    vertical-align: middle;
+    text-align: center;
+    max-height: 80%;  
+    max-width: 80%; 
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin-left: auto;
+    margin-right: auto ;
+}
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.main {
+  vertical-align: middle;
+  margin-left: 230px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  position: relative;
+}
+.img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.box {
+  float: middle;
+  width: 80%;
+  padding: 20px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 230px;
+  position: fixed;
+  z-index: 1;
+  top: 50;
+  left: 0;
+
+  background-color: RGB(250,250,250);
+  overflow-x: hidden;
+  margin-top: 100px;
+  transition: 0.5s;
+
+}
+
+.sidenav a.first {
+  padding: 6px 8px 6px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #303060;
+  display: block;
+  text-align: right;
+}
+
+.sidenav a.second {
+  padding: 6px 8px 6px 70px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #303060;
+  display: block;
+  text-align: right;
+}
+
+.sidenav a.first:hover {
+  font-size: 25px;
+  font-weight: bold;
+}
+.sidenav a.second:hover {
+  font-size: 17px;
+  font-weight: bold;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.vl {
+  border-left: 5px;
+  height: 400px;
+  width : 1px;
+  position: absolute;
+  left: 218.5px;
+  top:  0 px;
+  background-image: linear-gradient( transparent, #303060, transparent);
+}
+.matrix {
+    position: relative;
+}
+
+.matrix:before, .matrix:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 1px solid #f1f1f1;
+    width: 6px;
+    height: 100%;
+}
+.matrix:before {
+    left: -6px;
+    border-right: 0px;
+}
+.matrix:after {
+    right: -6px;
+    border-left: 0px;
+}
+.matrix: td {
+    padding: 5px;    
+    text-align: center;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child() {
+  background-color: #dddddd;
+}
+
+
+}
+
+
+</style>
+
+</head>
+<body>
+<div id="mySidebar" class="sidenav">
+  <div class="vl"></div>
+  <br><br><br>
+  <atopic><a class= 'second' href="proposal.html" >Proposal <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="index.html" > Milestone <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#p1" >Idea 1. NeRF <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#p2" >Idea 2. NLP <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#p3" >Idea 3. Simulation <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#Resourse" >Resources <span>&#8729;</span></a></atopic>
+</div>
+
+<div class="main">
+<br><br><br><br>
+<h1>Final Project proposal</h1>
+(we havn't decided which direction to go so we presented 3 ideas here. Any suggestion would be appreciated!)
+<h3>Exploring possible applications of ML methods in graphics generation (going from drawings, pictures, or text to a graphical output) or designing rule based simulations.</h3>
+
+<p style="font-size:15px;">CS 284a Computer graphics & Imaging 2022 Spring</p>  
+Team: Gregoria Millensifer, Kaleab Belete, Tristan Streichenberge, Xinwei Zhuang<br><br>
+Webpage: <a href="https://cal-cs184-student.github.io/sp22-project-webpages-xinwei-zhuang/proj_fin/index.html"> https://cal-cs184-student.github.io/sp22-project-webpages-xinwei-zhuang/proj_fin/index.html</a>
+
+<hr>
+
+<h2 id="p1">Idea 1 Transform drawings into scenes </h2>
+<h4>Problem description</h4>
+
+
+
+
+<h4>Deliverables</h4>
+Though in some disciplines, there exists numerous amounts of data. In the architectural field, the data is highly limited. We hypothesize that the network can generate a satisfying image from a single photo input. The aim is to build a game engine to generate scenes from drawings using machine learning algorithms such as Nerf (Mildenhall, 2020) and deep volumetric neural networks (Delanooy, 2018). We will provide an interactive tool for inputting a 2D sketch and generating either 2D scene or 3D models. 
+
+<h4>Evaluation matrix</h4>
+The evaluation will be to compare the difference between the generated scene with the actual scene/model. 
+
+<h4>Goals</h4>
+(1) we plan to deliver: when inputting an image, outputting a 3D model<br>
+(2) we hope to deliver: inputting multiple image from different perspective, generate model with high quality. <br>
+
+
+<h4>Schedule</h4>
+<table>
+  <tr>
+    <td>Week 1 </td>
+    <td>data preparation: scraping from openstreetmap, collect building modelling data and for each buiding, take snapshot for different perspectives. </td>
+  </tr>
+  <tr>
+    <td>Week 2</td>
+    <td>Using the framework of the NeRF, adjust parameters and train the model </td>
+  </tr>
+  <tr>
+    <td>Week 3 </td>
+    <td>Debugging and finalize model,Evaluation: compare the simulation and the real-world documentation </td>
+  </td>
+  <tr>
+    <td>Week 4</td>
+    <td> Clean up the final output and begin building a final deliverable(report, code, and presentation).</td>
+  </tr>
+</table>
+
+<h4>Reference</h4>
+Mildenhall B, Srinivasan PP, Tancik M, Barron JT, Ramamoorthi R, Ng R. Nerf: Representing scenes as neural radiance fields for view synthesis. InEuropean conference on computer vision 2020 Aug 23 (pp. 405-421). Springer, Cham.<br>
+Delanoy J, Aubry M, Isola P, Efros AA, Bousseau A. 3d sketching using multi-view deep volumetric prediction. Proceedings of the ACM on Computer Graphics and Interactive Techniques. 2018 Jul 25;1(1):1-22.<br>
+Isola P, Zhu JY, Zhou T, Efros AA. Image-to-image translation with conditional adversarial networks. InProceedings of the IEEE conference on computer vision and pattern recognition 2017 (pp. 1125-1134).
+<a href="https://phillipi.github.io/pix2pix/"> https://phillipi.github.io/pix2pix/</a>
+
+
+
+
+<h2 id="p2">Idea 2: Applications of NLP to Graphics Manipulation</h2>
+
+<h4>Problem description</h4>
+This is an attempt to generate contextually relevant graphics based on some input text using NLP to process the input text then mapping the output to a set of scenes. The idea of generating scenes without much technical knowledge is an interesting problem with a lot of possible applications in areas ranging from advertisement to film and video games. The challenges are the accuracy of the text processing, generating appropriate scenes, the time it may take to work with a complex model, having to adequately map the text to the appropriate set of images in a limited set, and more. As this will likely be reliant on Deep Neural Networks it may take time to train and the quality of the output will be dependent on the quality of the data. This is on top of having to build or generate a set of scenes that can adequately represent a collection of input text. 
+
+<h4>Goals</h4>
+The end goal is to have a simple interactive program that allows the user to input text and get a contextually relevant output in a graphics window. One possible application includes having a program that will produce an animated reaction based on the content of the text. This could be a live facial animation or full body animation as the text is being processed, where the animation depicts the reaction of a given character. Another possible application is the description of a scene in text being used to generate a graphical output. For training we plan on looking into labeled datasets of images(ranging from academic labeled datasets to tools like google street view or facebooks labeled datasets) on top of models like GPT. The measure of accuracy is fairly straightforward, as we introduce new text we would have a labeled expected output for the text and we can measure the total distance between our expected output and actual output in our test set.
+
+<h4>Deliverables</h4>
+(1) what we plan to deliver is the text processing setup, the graphics generation setup(including the set of scenes) and a final interactive program that can take an input text and generate a matching graphical scene or animation (on top of the other required documents).  The accuracy here is likely to be spotty but within a core section of input text it should perform relatively well.  <br>
+(2) what we hope to deliver if time permits is a robust text to graphics pipeline (with the possibility of basic editing) that works well for a good representative subset of everyday words.
+
+
+<h4>Schedule</h4>
+<table>
+  <tr>
+    <td> Week 1 </td>
+    <td> Work out the basic text processing pipeline while beginning to build a set of scenes to map to the context of the text.  </th>
+  </td>
+  <tr>
+    <td>Week 2 & 3</td>
+    <td>Troubleshoot and begin integration of the text processing with graphical output. Add additional features (better processing, more scenes, improved performance, etc…) if there is extra time. </td>
+  </tr>
+  <tr>
+    <td>Week 4</td>
+    <td>Clean up the final output and begin building a final deliverable(report, code, and presentation).
+</td>
+  </tr>
+</table>
+
+<h4>Reference</h4>
+Example Image description dataset: 
+<a href="https://arxiv.org/abs/1605.00459  "> https://arxiv.org/abs/1605.00459  </a>
+<br>
+
+GPT: <a href="https://github.com/openai/gpt-2 ">https://github.com/openai/gpt-2  </a>
+<br><br>
+
+
+
+
+
+
+<h2 id="p3">Idea 3 Agent-based crowd simulation</h2>
+
+<h4>Problem description</h4>
+
+<figure>
+  <p><img src="image/Animation2.gif" style="width:60%">
+    <figcaption>expected results (ref. <a href="http://gamma.cs.unc.edu/DCrowd/">Directing Crowd Simulations Using Navigation Fields</a>)</figcaption>
+</figure>
+
+We want to build a simulation for circulation in complex building settings. It is crucial when architects make the design decisions for choosing the best circulation plan, especially for large activities. Failure in circulation design can cause problems ranging from making it confusing to find ways and locating to Stampede. 
+We will use particle simulation incorporating human interaction between each other (such as the preference of turning at a crossroad, not being too far or too close to the majority of people…) to perform circulation simulation within a building, and use the simulation to evaluate the plan. 
+
+<h4>Deliverables</h4>
+We will provide a demo for the simulation, the demo will show how people behave in a building with a complex plan, and we can change variables such as the number of people to see how people behave in different scenarios. The deliverables will be an interactive program. It might be done in unity. 
+
+<h4>Evaluation matrix</h4>
+For the evaluation, a potential evaluation matrix would be finding a real-world scenario (such as people entering a stadium) and comparing it with the generated simulation. 
+
+<h4>Goals</h4>
+(1) we plan to deliver:Our hypothesis is that through the simulation, we can inform the design process and choose a better circulation without confusing people. We will provide a simulation that is realistic enough to inform design decisions.<br>
+(2) we hope to deliver: adding more complex population settings to incorporate more scenarios (age, sex, …)
+
+<h4>Schedule</h4>
+<table>
+  <tr>
+    <td> Week 1 </td>
+    <td>prepare for the 3D model we are gonna use, set up in unity</th>
+  </td>
+  <tr>
+    <td>Week 2</td>
+    <td>write the swarm algorithm with simple interactions</td>
+  </tr>
+  <tr>
+    <td>Week 3 </td>
+    <td>more complex interactions and parameterized inputs (crowd density, preference, personalities …) and add emergency circumstances (eg. a door suddenly closed) and/or more exicting unrealistic scenes such as the one Ren showed on the lecture</th>
+  </td>
+  <tr>
+    <td>Week 4</td>
+    <td>Evaluation: compare the simulation and the real-world documentation<br>
+Introducing more building plans and provide design insight for building plan<br>
+Write up </td>
+  </tr>
+</table>
+
+<h4>Reference</h4>
+<a href="https://repository.upenn.edu/cgi/viewcontent.cgi?article=1223&context=hms"> https://repository.upenn.edu/cgi/viewcontent.cgi?article=1223&context=hms</a>
+
+ <br>
+ <a href="https://github.com/crowddynamics/crowddynamics"> https://github.com/crowddynamics/crowddynamics</a>
+ <br>
+Swarm topic Ren mentioned in the lecture. 
+
+
+<h2 id="Resourse">Resources</h2>
+Laptop & google colab. Potentially unity if we were doing the idea 3. 
+
+
+
+</body>
+</html>
