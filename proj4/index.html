@@ -1,7 +1,415 @@
+<!DOCTYPE html>
 <html>
-	<head>
-	</head>
-	<body>
-		Project 4 here
-	</body>
+<head>
+<title>Page Title</title>
+
+<script src="/js/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+<script type="text/javascript" src="LaTeXMathML.js">
+  <script defer src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+(function () {
+  var script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+  script.async = true;
+  document.head.appendChild(script);
+})();
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "200px";
+  document.getElementById("main").style.marginLeft = "200px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<style>
+
+code {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  color: #336699;
+  padding: 2px;
+  font-size: 80%;
+  line-height: 1.5;
+}
+.MathJax {
+font-size: 1.2em;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+html {
+    margin:    0 auto;
+    max-width: 1200px;
+}
+body {
+  background-color: RGB(250,250,250);
+  color: #303060;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+box-sizing: border-box;
+  width: 100%; 
+  padding: 20px;   
+  margin: auto;
+}
+p.big {
+  line-height: 1.5;
+}
+figure figcaption {
+    text-align: center;
+}
+figure {
+    display: block;
+    margin: 0 1em 1em 0;
+    vertical-align: middle;
+    text-align: center;
+    max-height: 80%;  
+    max-width: 80%; 
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin-left: auto;
+    margin-right: auto ;
+}
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.main {
+  vertical-align: middle;
+  margin-left: 230px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  position: relative;
+}
+.img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.box {
+  float: middle;
+  width: 80%;
+  padding: 20px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 230px;
+  position: fixed;
+  z-index: 1;
+  top: 50;
+  left: 0;
+
+  background-color: RGB(250,250,250);
+  overflow-x: hidden;
+  margin-top: 100px;
+  transition: 0.5s;
+
+}
+
+.sidenav a.first {
+  padding: 6px 8px 6px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #303060;
+  display: block;
+  text-align: right;
+}
+
+.sidenav a.second {
+  padding: 6px 8px 6px 70px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #303060;
+  display: block;
+  text-align: right;
+}
+
+.sidenav a.first:hover {
+  font-size: 25px;
+  font-weight: bold;
+}
+.sidenav a.second:hover {
+  font-size: 17px;
+  font-weight: bold;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.vl {
+  border-left: 5px;
+  height: 400px;
+  width : 1px;
+  position: absolute;
+  left: 218.5px;
+  top:  0 px;
+  background-image: linear-gradient( transparent, #303060, transparent);
+}
+.matrix {
+    position: relative;
+}
+
+.matrix:before, .matrix:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 1px solid #f1f1f1;
+    width: 6px;
+    height: 100%;
+}
+.matrix:before {
+    left: -6px;
+    border-right: 0px;
+}
+.matrix:after {
+    right: -6px;
+    border-left: 0px;
+}
+.matrix: td {
+    padding: 5px;    
+    text-align: center;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+}
+
+
+</style>
+
+</head>
+<body>
+<div id="mySidebar" class="sidenav">
+  <div class="vl"></div>
+  <br><br><br>
+  <atopic><a class= 'second' href="#1" >Part 1 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#2" >Part 2 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#3" >Part 3 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#4" >Part 4 <span>&#8729;</span></a></atopic>
+  <atopic><a class= 'second' href="#5" >Part 5 <span>&#8729;</span></a></atopic>
+</div>
+
+<div class="main">
+<br><br><br><br>
+<h1>Project 4: ClothSim</h1>
+
+<p style="font-size:15px;">CS 284a Computer graphics & Imaging </p> 2022 Spring Kaleab Belete, Xinwei Zhuang</p>
+Webpage: <a href="https://cal-cs184-student.github.io/sp22-project-webpages-xinwei-zhuang/proj4/index.html"> https://cal-cs184-student.github.io/sp22-project-webpages-xinwei-zhuang/proj4/index.html</a>
+
+<hr>
+
+<h2 id="1">Part 1: Masses and springs</h2>
+
+<h3>Reflection</h3>
+Take some screenshots of scene/pinned2.json from a viewing angle where you can clearly see the cloth wireframe to show the structure of your point masses and springs.
+Show us what the wireframe looks like (1) without any shearing constraints, (2) with only shearing constraints, and (3) with all constraints.
+<figure>
+  <p><img src="image/part1_withoutshearing.png" style="width:100%">
+    <figcaption>without shearing constraints</figcaption>
+</figure>
+<figure>
+  <p><img src="image/part1_withshearing.png" style="width:100%">
+    <figcaption>with only shearing constraints</figcaption>
+</figure>
+<figure>
+  <p><img src="image/part1_all.png" style="width:100%">
+    <figcaption>with all constraints</figcaption>
+</figure>
+
+
+
+
+<h2 id="2">Part 2: Simulation via numerical integration</h2>
+Experiment with some the parameters in the simulation. To do so, pause the simulation at the start with P, modify the values of interest, and then resume by pressing P again. You can also restart the simulation at any time from the cloth's starting position by pressing R.<br>
+<ol>
+<li>k_s</li>
+With a small k_s, the cloth will have more foldings, there will be more ripples. With a large k_s, because the spring constant is large, the cloth will have less deformations.
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image\part2_ks_small.png" style="width:100%">
+    <figcaption>k_s = 5 N/m</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image\part2_ks_large.png" style="width:100%">
+    <figcaption>k_s = 50,000 N/m</figcaption>
+</figure>
+  </div>
+</div>
+
+
+<li>density</li>
+With a small density, the cloth behaves with less ripples, and increase the density will leads to more deformations. 
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image\part2_den_small.png" style="width:100%">
+    <figcaption>density = 0.2 g/cm^2</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image\part2_den_large.png" style="width:100%">
+    <figcaption>density = 50000 g/cm^2</figcaption>
+</figure>
+  </div>
+</div>
+
+<li>dampling</li>
+Though it barely shows in the final state image, but with a large dampling, simulation seems to be slow and takes a long time to reach the steady state. A small dampling rate will lead to a quicker simulation becuase we don't have that much of resistance. 
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image\part2_den_small.png" style="width:100%">
+    <figcaption>dampling = 0.2%</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image\part2_damp_high.png" style="width:100%">
+    <figcaption>dampling = 1%</figcaption>
+</figure>
+  </div>
+</div>
+
+</ol>
+
+For each of the above, observe any noticeable differences in the cloth compared to the default parameters and show us some screenshots of those interesting differences and describe when they occur.<br>
+
+
+<figure>
+  <p><img src="image/part2_pin2.png" style="width:100%">
+    <figcaption>scene/pinned4.json in its final resting state</figcaption>
+</figure>
+
+
+
+<h2 id="3">Part 3: Handling collisions with other objects</h2>
+<h2 id="4">Part 4: Handling self-collisions</h2>
+<h2 id="5">Part 5: Shaders</h2>
+<ol>
+<li><b>Explain in your own words what is a shader program and how vertex and fragment shaders work together to create lighting and material effects.</b></li>
+<br>
+Shaders is isolated programs that run in parallel on GPU, executing sections of the graphics pieline. It takes an input (attribute), and output a 4-D vector. The pipeline is we use the output of the vvertex shader as the input of theh fragment shader. <br> <br>
+The vertex shader intakes vertices, and modifies the geometric properties such as position and normal vectors, using final positions to write varying (transformed positions, normals, uv coordinates) to use in the fragment shader. The gragment shader intakes geometric attributes of the fragment, and compute the color. 
+
+<br>
+<br>
+<li><b>Explain the Blinn-Phong shading model in your own words. Show a screenshot of your Blinn-Phong shader outputting only the ambient component, a screen shot only outputting the diffuse component, a screen shot only outputting the specular component, and one using the entire Blinn-Phong model.</b></li>
+<br>
+The Blinn-Phong reflection model is a efficient way to approximate lighting. We break down specular reflection into ambient, diffuse and specular shader. In this project, we add ambient light and specular reflection to the diffuse lighting to render materials with reflective property. The equation for calculating Blinn-Phong reflection is  
+
+$$L=k_a I_a + k_d (\frac{I}{r^2}) max (0, n\cdot l) + k_s (\frac{I}{r^2})max (0, n\cdot h)^p$$
+
+where the first term is the ambient shader, the second is the diffuse shader, and the last is the specular shader. A visual separation illustration is shown below. 
+
+<figure>
+  <p><img src="image/part5_blinnphong.png" style="width:100%">
+    <figcaption>Blinn Phong reflection model</figcaption>
+</figure>
+
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image\part5_2_ambient.png" style="width:100%">
+    <figcaption>ambient only</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image\part5_2_diffuse.png" style="width:100%">
+    <figcaption>diffuse only </figcaption>
+</figure>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <figure>
+  <p><img src="image\part5_2_specular.png" style="width:100%">
+    <figcaption>specular only</figcaption>
+</figure>
+  </div>
+  <div class="column">
+    <figure>
+  <p><img src="image\part5_2_all.png" style="width:100%">
+    <figcaption>Blinn Phone Reflection!</figcaption>
+</figure>
+  </div>
+</div>
+
+<br>
+<br>
+<li><b>Show a screenshot of your texture mapping shader using your own custom texture by modifying the textures in /textures/.</b></li>
+
+<br>
+<br>
+<li><b>Show a screenshot of bump mapping on the cloth and on the sphere. Show a screenshot of displacement mapping on the sphere. Use the same texture for both renders. You can either provide your own texture or use one of the ones in the textures directory, BUT choose one that's not the default texture_2.png. Compare the two approaches and resulting renders in your own words. Compare how your the two shaders react to the sphere by changing the sphere mesh's coarseness by using -o 16 -a 16 and then -o 128 -a 128.</b></li>
+
+<br>
+<br>
+<li><b>Show a screenshot of your mirror shader on the cloth and on the sphere.</b></li>
+
+<br>
+<br>
+<li><b>Explain what you did in your custom shader, if you made one.</b></li>
+</ol>
+
+</body>
 </html>
